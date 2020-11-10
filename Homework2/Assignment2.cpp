@@ -6,6 +6,11 @@ using namespace std;
 string encrypt(string text, int s)
 {
     string result = "";
+    if (s < 0) {
+        do {
+            s += 26;
+        } while (s < 0);
+    }
 
     for (int i = 0; i < text.length(); i++)
     {
